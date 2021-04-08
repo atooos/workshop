@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 	"time"
 )
 
@@ -37,3 +38,11 @@ func Valid() func() bool {
 }
 
 // 5- (advenced) modify this closure function in order to create an email validation.
+func ValidEmail() func(email string) bool {
+	return func(email string) bool {
+		if !strings.Contains(email, "@") {
+			return false
+		}
+		return true
+	}
+}
