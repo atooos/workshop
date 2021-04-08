@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"fmt"
 	"math/rand"
 	"strings"
@@ -20,18 +21,18 @@ func main() {
 
 	// Simple concat of string.
 	rand.Seed(time.Now().UnixNano())
-	res := ""
-	for i := 0; i < 10e4; i++ {
-		res += randomString()
-	}
-	fmt.Println(res)
+	// res := ""
+	// for i := 0; i < 10e4; i++ {
+	// 	res += randomString()
+	// }
+	// fmt.Println(res)
 
 	// Usage of a buffer.
-	// var buffer bytes.Buffer
-	// for i := 0; i < 10e4; i++ {
-	// 	buffer.WriteString(randomString())
-	// }
-	// fmt.Println(buffer.String())
+	var buffer bytes.Buffer
+	for i := 0; i < 10e4; i++ {
+		buffer.WriteString(randomString())
+	}
+	fmt.Println(buffer.String())
 }
 
 const all = "abcdefghijklmnopqrstuvwxyz"

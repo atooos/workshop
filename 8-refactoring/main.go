@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+
 	"workshop/8-refactoring/model"
 )
 
